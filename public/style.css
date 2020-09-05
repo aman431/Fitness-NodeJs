@@ -85,7 +85,7 @@
     background: white;
     margin-top: 40px;
     width: 100%; 
-    height: 450px;
+    height: 550px;
     box-shadow: -10px -10px 10px rgba(98, 91, 91, 0.2), 10px 10px 10px rgba(0, 0, 0, 0.23);
 }
 .S_Explain .contain{
@@ -526,12 +526,13 @@
     }
     .Introduction .Intro_data .logo-nav{
         width: 300px;
+	top: 5%;
     }
     .Introduction .Intro_data .logo-nav li{
         position: relative;
-        padding: 12px;
-        left: 30px;
-        font-size: 22px;
+        padding: 22px;
+        left: 0px;
+        font-size: 30px;
     }
     .Introduction .Intro_data .head{
         width: 250px;
