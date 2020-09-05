@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aman Rathore(@M@N_AR7)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/style.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="hole">
+		<div class="header">
+			<div class = "main">
+			<div class="Name">
+				<h1>RAHUL Rathore</h1>
+                                <p>Trainner</p>
+			</div>
+			<div class="Introduction">
+				<div class="pic">
+					<img src="/rahul.jpg">
+				</div>
+				<div class="Intro_data">
+					<div class="head">
+					<h2>I'M <span style="color:#28a828;">RAHUL RATHORE</span></h2>
+                                        <p>Trainner</p></br>
+					</div>
+					<div class="Information">
+						<p>Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 22</p>
+						<p>Address &nbsp; &nbsp;Pune,Maharastra</p>
+						<p>Email &nbsp; &nbsp; &nbsp; amanrathod777@gmail.com</p>
+						<p>Phone &nbsp; &nbsp; &nbsp;+91 7040755030</p>
+					</div>
+						<ul class = "logo-nav">
+						<li><a href="https://www.facebook.com/aman.rathod.9022"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.instagram.com/17_ar_7/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="hhttps://api.whatsapp.com/send?phone=917040755030"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+						<li><a href="https://twitter.com/AmanRat08689082"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+                            <div class="skills">
+                                <h2>SKILLS</h2>
+                                <div class="S_Explain">
+                                    <div class = "contain">
+                                        <p>I am Graduate from Modern College of Arts,Science and Commerce.<br><br>
+                                        Tool and Technology which i know :<p><br>
+                                        <ul>
+                                            <li><b style="font-size: 15px; color:#269926">Languages </b></li>
+                                            <p>- C, C++, CoreJava, Python, HTML, CSS, JavaScript, Mysql.</p><br>
+                                            <li><b style="font-size: 15px; color:#269926">Software</b></li>
+                                            <p> Turbo C++, Netbean Id, Android Studio, Vim.</p></br>
+                                            <li><b style="font-size: 15px; color:#269926">Operating System</b></li>
+                                            <p>Linux, Window.</p><br>
+                                            <li><b style="font-size: 15px; color:#269926">Other Skill</b></li>
+                                            <p>Football, Dance.</p>
+                                        </ul>
+                                    </div>
+                                </div>
+			    </div>
+                       </div>
+ </body>
+</html>
