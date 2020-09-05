@@ -4,7 +4,7 @@
 }
 .hole{
     background: #cac5c5; 
-    height: 1500px;
+    height: 2000px;
 }
 .header{
 	background: #269926;
@@ -477,7 +477,7 @@
 @media only screen and (max-width: 700px)
 {
     .hole{
-        height: 4900px;
+        height: 1300px;
         background: #cac5c5;
     }
     .main{
@@ -530,9 +530,9 @@
     }
     .Introduction .Intro_data .logo-nav li{
         position: relative;
-        padding: 22px;
+        padding: 24px;
         left: 0px;
-        font-size: 30px;
+        font-size: 25px;
     }
     .Introduction .Intro_data .head{
         width: 250px;
@@ -549,7 +549,7 @@
     .S_Explain {
         display: block;
         width: 300px;
-        height: 750px;
+        height: 500px;
     }
     .S_Explain .contain{
         width: 250px;
