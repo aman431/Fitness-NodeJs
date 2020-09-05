@@ -34,18 +34,18 @@
 .Introduction{
 	display: flex;
 	background: #fff;
-	height: 500px;
+	height: 400px;
 	margin-top: 100px;
-	width: auto;
+	width: 800px;
 }
 .Introduction .pic img{
 	height: 100%;
-	width: 60%;
+	width: 100%;
 }
 .Introduction .Intro_data{
 	position: relative;
 	margin-top: 20px;
-	right: 200px;
+	margin-left: 20px;
 }
 .Introduction .Intro_data .head{
 	border-bottom: 1px solid grey;
@@ -56,9 +56,9 @@
 }
 .Introduction .Intro_data .logo-nav{
 	position: relative;
-	top: 43.5%;
-	width: 148%; 
-	left: -40px;
+	top: 28%;
+	right: 20px;
+	width: 104%; 
 	height: 50px;
 	background: #269926;
 } 
