@@ -11,6 +11,10 @@ const ClientSchema = new mongoose.Schema({
 	client_Number: {
 		type: 'String',
 		required: 'This field is required'
+	},
+	DocumentInsertedOn:{
+		type: Date,
+		default: Date.now
 	}
 });
 const Client = mongoose.model('client', ClientSchema);

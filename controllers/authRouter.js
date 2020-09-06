@@ -71,7 +71,8 @@ router.post('/cont-form', (req,res) => {
 		var client =  new cont_form({
 			user_name: req.body.user_name,
 			client_Name: req.body.client_Name,
-			client_Number: req.body.client_Number
+			client_Number: req.body.client_Number,
+			now: new Date()
 		});
 		client
 		.save()
