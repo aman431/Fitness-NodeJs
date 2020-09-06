@@ -2,7 +2,7 @@ const { Router } = require('express');
 const authController = ('../controllers/AuthController');
 const User = require('../models/user');
 const Signup = require('../models/signup');
-
+const cont_form = require('../models/cont-form');
 const router = Router();
 
 
@@ -60,6 +60,29 @@ router.post('/user',(req,res) =>{
 		});
 	};
 
+});
+
+router.get('/cont-form', (req,res) =>{
+	res.render('con_form');
+});
+
+router.post('/cont-form', (req,res) => {
+	try{
+		var client =  new cont_form({
+			user_name: req.body.user_name,
+			client_Name: req.body.client_Name,
+			client_Number: req.body.client_Number
+		});
+		client
+		.save()
+		res.send(client);
+	}
+	catch(err){
+		console.log('Something wrong !! please contact to the Owner');
+		res.status(401).json({
+			message: 'Something Wrong !! Please Contact to the Owner'
+		});
+	}
 });
 
 module.exports = router;
