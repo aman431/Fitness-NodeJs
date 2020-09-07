@@ -3,6 +3,9 @@ const authController = ('../controllers/AuthController');
 const User = require('../models/user');
 const Signup = require('../models/signup');
 const cont_form = require('../models/cont-form');
+const Parq = require('../models/parq');
+
+
 const router = Router();
 
 
@@ -77,6 +80,7 @@ router.post('/cont-form', (req,res) => {
 		client
 		.save()
 		res.send(client);
+		 // res.render('parq');
 	}
 	catch(err){
 		console.log('Something wrong !! please contact to the Owner');
@@ -89,6 +93,30 @@ router.post('/cont-form', (req,res) => {
 
 router.get('/parq',(req,res) => {
 	res.render('parq');
+});
+
+
+
+router.post('/parq',(req,res) => {
+	try{
+
+		var parq = new Parq({
+
+			question1: req.body.question1,
+			question2: req.body.question2,
+			question3: req.body.question3,
+			question4: req.body.question4,
+			question5: req.body.question5
+		});
+
+		parq
+		.save()
+		res.send(parq);
+	}
+	catch(err){
+		console.log(err);
+		res.status(401).json({message:'Something wrong'});
+	}
 });
 
 
