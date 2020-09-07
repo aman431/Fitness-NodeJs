@@ -86,4 +86,10 @@ router.post('/cont-form', (req,res) => {
 	}
 });
 
+
+router.get('/parq',(req,res) => {
+	res.render('parq');
+});
+
+
 module.exports = router;
