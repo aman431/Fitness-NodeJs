@@ -106,7 +106,11 @@ router.post('/parq',(req,res) => {
 			question2: req.body.question2,
 			question3: req.body.question3,
 			question4: req.body.question4,
-			question5: req.body.question5
+			question5: req.body.question5,
+			age: req.body.age,
+			gender: req.body.gender,
+			height: req.body.height,
+			weight: req.body.weight
 		});
 
 		parq

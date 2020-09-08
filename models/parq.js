@@ -14,6 +14,18 @@ const parqSchema = new mongoose.Schema({
 	},
 	question5:{
 		type:String
+	},
+	age:{
+		type:String
+	},
+	gender:{
+		type:String
+	},
+	height:{
+		type:String
+	},
+	weight:{
+		type:String
 	}
 });
 
