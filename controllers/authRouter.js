@@ -95,8 +95,8 @@ router.post('/cont-form', (req,res) => {
 		});
 		client
 		.save()
-		res.send(client);
-		 // res.render('parq');
+		//res.send(client);
+		 res.redirect('parq');
 	}
 	catch(err){
 		console.log('Something wrong !! please contact to the Owner');
