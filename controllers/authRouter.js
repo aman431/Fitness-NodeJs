@@ -14,21 +14,37 @@ router.get('/signup',(req,res) => {
 });
 
 router.post('/signup',(req,res,next) => {
-	try {
-		var signup = new Signup({ 
+	try	{
+		var signup = new Signup({
+			firstname: req.body.firstname,
+			lastname: req.body.lastname,
 			email: req.body.email,
-			password: req.body.password
+			number: req.body.number,
+			password: req.body.password,
+			retype_password: req.body.retype_password
 		});
+		// check(password,retype_password);
 		signup
 		.save()
-		res.render('home');
+
+		res.redirect('login');
 	}
 	catch(err){
 		console.log(err);
 		res.status(401).send('user is not created');
 	}
-
 });
+
+const check = (password,retype_password) => {
+	if(password === retype_password){
+		console.log('Working');
+	}
+	else{
+		res.status(400).json({
+			message:'password doesnot match'
+		});
+	}
+}
 
 router.get('/login',(req,res) => {
         res.render('login');
@@ -123,5 +139,8 @@ router.post('/parq',(req,res) => {
 	}
 });
 
+router.get('/login',(req,res) => {
+	res.render('login');
+});
 
 module.exports = router;
