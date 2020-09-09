@@ -23,7 +23,6 @@ router.post('/signup',(req,res,next) => {
 			password: req.body.password,
 			retype_password: req.body.retype_password
 		});
-		// check(password,retype_password);
 		signup
 		.save()
 
@@ -34,17 +33,6 @@ router.post('/signup',(req,res,next) => {
 		res.status(401).send('user is not created');
 	}
 });
-
-const check = (password,retype_password) => {
-	if(password === retype_password){
-		console.log('Working');
-	}
-	else{
-		res.status(400).json({
-			message:'password doesnot match'
-		});
-	}
-}
 
 router.get('/login',(req,res) => {
         res.render('login');
