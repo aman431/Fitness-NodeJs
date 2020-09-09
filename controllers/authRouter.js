@@ -23,11 +23,8 @@ router.post('/signup',(req,res,next) => {
 			password: req.body.password,
 			retype_password: req.body.retype_password
 		});
-<<<<<<< HEAD
 		signup
 		.save()
-=======
->>>>>>> b73e4145e19931ff361e3f6d844c7f45ab47a23b
 
 		signup
 		.save((err,doc) => {
@@ -55,8 +52,6 @@ router.post('/signup',(req,res,next) => {
 	}
 });
 
-<<<<<<< HEAD
-=======
 function handleValidationError(err,body){
 	for (field in err.errors)
 	{
@@ -84,7 +79,6 @@ const check = (password,retype_password) => {
 	}
 }
 
->>>>>>> b73e4145e19931ff361e3f6d844c7f45ab47a23b
 router.get('/login',(req,res) => {
         res.render('login');
 });
