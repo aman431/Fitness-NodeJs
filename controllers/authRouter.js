@@ -4,7 +4,7 @@ const User = require('../models/user');
 const Signup = require('../models/signup');
 const cont_form = require('../models/cont-form');
 const Parq = require('../models/parq');
-
+const { check, validationResult } = require('express-validator');
 
 const router = Router();
 
@@ -13,38 +13,53 @@ router.get('/signup',(req,res) => {
 	res.render('signup');
 });
 
-router.post('/signup',(req,res,next) => {
+router.post('/signup', [
+		check('firstname', 'This username must be more than 3 character')
+			.exists()
+			.isLength({ min: 3}),
+		check('lastname', 'This lastname must be more than 3 character')
+			.exists()
+			.isLength({min: 3}),
+		check('email', 'This email is not valid')
+			.isEmail()
+			.normalizeEmail(),
+		check('number','Please Enter the valid Number ')
+			.exists()
+			.isLength({min: 10}),
+		check('retype_password','Password must be between 4 to 16 character')
+			.trim()
+			.isLength({min: 4,max: 16})
+			.custom(async (retype_password , {req}) => {
+				const password = req.body.password
+
+				if(password !== retype_password){
+					throw new Error('Password doesnot Match')
+				}
+			})
+	] , (req,res,next) => {
+
 	try	{
-		var signup = new Signup({
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
-			email: req.body.email,
-			number: req.body.number,
-			password: req.body.password,
-			retype_password: req.body.retype_password
-		});
-		signup
-		.save()
 
-		signup
-		.save((err,doc) => {
-			if(!err){
-				res.redirect('login');
-			}
-			else{
-				if(err.name === 'ValidationError' ){
-					handleValidationError(err, req.body);
-					res.render('/signup',{
-						viewTitle: "Insert User",
-						qs: req.query
-					});
-				}
-
-				else{
-					console.log('Something is wrong');
-				}
-			}
-		})
+		const errors = validationResult(req)
+		console.log(errors);
+		if(!errors.isEmpty()) {
+			const alert = errors.array();
+			res.render('signup',{ alert });
+		}
+		else{
+			var signup = new Signup({
+				firstname: req.body.firstname,
+				lastname: req.body.lastname,
+				email: req.body.email,
+				number: req.body.number,
+				password: req.body.password,
+				retype_password: req.body.retype_password
+			});
+			signup
+			.save((err,doc) => {
+				res.render('login')
+			})
+		}
 	}
 	catch(err){
 		console.log(err);
@@ -52,32 +67,14 @@ router.post('/signup',(req,res,next) => {
 	}
 });
 
-function handleValidationError(err,body){
-	for (field in err.errors)
-	{
-		switch(err.errors[field].path) {
-			case 'fullname':
-				body['firstNameError'] = err.errors[field].message;
-				break;
-			case 'email':
-				body['emailError'] = err.errors[field].message;
-				break;
-			default: 
-				 break;
-		}
-	}
-}
-
-const check = (password,retype_password) => {
-	if(password === retype_password){
-		console.log('Working');
-	}
-	else{
-		res.status(400).json({
-			message:'password doesnot match'
-		});
-	}
-}
+// function Authpassword(password,retype_password,req,res){
+// 	if(password === retype_password){
+// 		console.log('Successfully Match')
+// 	}
+// 	else{
+// 		return res.status(400).json({'message':'Password doesnot match'});
+// 	}
+// }
 
 router.get('/login',(req,res) => {
         res.render('login');
