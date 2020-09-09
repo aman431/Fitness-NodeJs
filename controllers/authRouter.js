@@ -23,10 +23,31 @@ router.post('/signup',(req,res,next) => {
 			password: req.body.password,
 			retype_password: req.body.retype_password
 		});
+<<<<<<< HEAD
 		signup
 		.save()
+=======
+>>>>>>> b73e4145e19931ff361e3f6d844c7f45ab47a23b
 
-		res.redirect('login');
+		signup
+		.save((err,doc) => {
+			if(!err){
+				res.redirect('login');
+			}
+			else{
+				if(err.name === 'ValidationError' ){
+					handleValidationError(err, req.body);
+					res.render('/signup',{
+						viewTitle: "Insert User",
+						qs: req.query
+					});
+				}
+
+				else{
+					console.log('Something is wrong');
+				}
+			}
+		})
 	}
 	catch(err){
 		console.log(err);
@@ -34,6 +55,36 @@ router.post('/signup',(req,res,next) => {
 	}
 });
 
+<<<<<<< HEAD
+=======
+function handleValidationError(err,body){
+	for (field in err.errors)
+	{
+		switch(err.errors[field].path) {
+			case 'fullname':
+				body['firstNameError'] = err.errors[field].message;
+				break;
+			case 'email':
+				body['emailError'] = err.errors[field].message;
+				break;
+			default: 
+				 break;
+		}
+	}
+}
+
+const check = (password,retype_password) => {
+	if(password === retype_password){
+		console.log('Working');
+	}
+	else{
+		res.status(400).json({
+			message:'password doesnot match'
+		});
+	}
+}
+
+>>>>>>> b73e4145e19931ff361e3f6d844c7f45ab47a23b
 router.get('/login',(req,res) => {
         res.render('login');
 });
@@ -82,9 +133,14 @@ router.post('/cont-form', (req,res) => {
 			now: new Date()
 		});
 		client
-		.save()
-		//res.send(client);
-		 res.redirect('parq');
+		.save((err,doc) => {
+			if(err){
+				res.status(400).json({message:'Something is Wrong'})
+			}
+			else{
+				res.redirect('parq');
+			}
+		})
 	}
 	catch(err){
 		console.log('Something wrong !! please contact to the Owner');
@@ -118,8 +174,14 @@ router.post('/parq',(req,res) => {
 		});
 
 		parq
-		.save()
-		res.send(parq);
+		.save((err,doc) => {
+			if(err){
+				res.status(400).json({message:'Something is wrong'});
+			}
+			else{
+				res.redirect('parq');
+			}
+		})
 	}
 	catch(err){
 		console.log(err);
