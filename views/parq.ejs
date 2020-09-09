@@ -4,28 +4,29 @@
 		<style>
 			h1{
 				padding: 10px;
+				font-size: 30px;
 				text-align: center;
 			}
 			.main{
 				padding-top: 10px;
 				padding-left: 50px;
-				/*font-size: 25px;*/
 				padding-right: 50px;
+			}
+			.main p{
+				font-size: 30px;
 			}
 			table{
 				 border-collapse: collapse;
-				 width: 750px;
+				 font-size: 30px;
+				 width: 850px;
 			}
 			table tr td{
 				padding: 10px;
-				/*font-size: 18px;*/
-			}
-			table input .input_field{
+				font-size: 30px;
 			}
 			.field{
 				border:none;
-				/*font-size: 15px;*/
-				padding: 5px;
+				font-size: 30px;
 				margin-bottom: 10px;
 				border-bottom: 1px solid black;
 				margin-right: 10px;
@@ -33,7 +34,11 @@
 			button{
 				margin-top: 15px;
 				padding: 10px;
-				/*font-size: 22px;*/
+				font-size: 22px;
+			}
+			.information{
+				padding: 5px;
+				font-size: 30px;
 			}
 		</style>
 	</head>
@@ -94,12 +99,13 @@
 				ASSUMPTION OF RISK: I declare that I have read, understood, and answered honestly all the questions above. I am agreeing to participate in the exercise session (which may include aerobic, resistance, power and stretching exercises) and understood that there may be risks associated with physical activity.<br>
 				I have read, understood and completed this questionnarie. Any questions I had were answered to my full satisfaction . <br><br>
 				If you have answered yes to any of the questions in the PARQ you must consult your doctor before taking part in the training. if you have answered NO to all of the questions in the PARQ or have confirmation from your doctor that you can take part, please complete the Consent form.</p>
-
-				Age:<input type='text' class='field' name='age' />
-				Gender:<input type='text' class='field' name='gender' /><br>
-				Height:<input type='text' class='field' name='height' />
-				Weight:<input type='text' class='field' name='weight' /><br>
-				<button type='submit'>Submit</button>
+				<div class='information'>
+					Age:<input type='text' class='field' name='age' /><br>
+					Gender:<input type='text' class='field' name='gender' /><br>
+					Height:<input type='text' class='field' name='height' /><br>
+					Weight:<input type='text' class='field' name='weight' /><br>
+					<button type='submit'>Submit</button>
+				</div>
 			</div>
 		</form>
 	</body>
