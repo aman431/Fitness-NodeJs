@@ -29,11 +29,25 @@
 				border-bottom: 1px solid black;
 			}
 		</style>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
 		<h1 class='header'>INFORMED CONSENT FORM</h1>
 		<form action="/cont-form" method="POST" autocomplete="off">
 		<div class = "main">
+
+			<% if(typeof alert != 'undefined') { %>
+				<% alert.forEach(function(error) { %>
+					<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						  <%= error.msg %>
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span>
+						  </button>
+					</div>
+				<% }) %>
+			<% } %>
+
 			<p> I <input type="text" class="user_name" name="user_name"> give consent to <b>Rahul Rathore</b> to provide Nutrition Counselling to myself or the person for whom i am legally responsible. The consult will provide information and guidance about health factor that are within my control: my diet, nutrition and lifestyle.<br><br>
 
 			I understand that <b>Rahul Rathore</b> is not a medical physician. Thus, he/she will not diagnose medical conditions, but will provide nutritional support and nutrition support and nutrition education for an already diagnosed condition. While nutritional support would be important compliment to my health and disease management, I understand these service cannot a substitute for medical care. <br><br>
