@@ -264,8 +264,8 @@ router.post('/parq',[
 	}
 });
 
-router.get('/login',(req,res) => {
-	res.render('login');
+router.get('/diet',(req,res) => {
+	res.render('diet');
 });
 
 module.exports = router;
