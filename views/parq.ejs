@@ -4,20 +4,20 @@
 		<style>
 			h1{
 				padding: 10px;
-				font-size: 30px;
+				font-size: 25px;
 				text-align: center;
 			}
 			.main{
 				padding-top: 10px;
-				padding-left: 50px;
-				padding-right: 50px;
+				padding-left: 20px;
+				padding-right: 20px;
 			}
 			.main p{
-				font-size: 30px;
+				font-size: 25px;
 			}
 			table{
 				 border-collapse: collapse;
-				 font-size: 30px;
+				 font-size: 20px;
 				 width: 850px;
 			}
 			table tr td{
@@ -26,8 +26,10 @@
 			}
 			.field{
 				border:none;
+				outline: none;
+				margin-left: 40px;
 				font-size: 30px;
-				margin-bottom: 10px;
+				margin-bottom: 50px;
 				border-bottom: 1px solid black;
 				margin-right: 10px;
 			}
@@ -39,6 +41,22 @@
 			.information{
 				padding: 5px;
 				font-size: 30px;
+			}
+			.phy-act{
+				position: relative;
+				font-size: 20px;
+				right: 10px;
+			}
+			.phy-act th{
+				text-align: center;
+			}
+			.phy-act td{
+				font-size: 20px;
+			}
+			.phy-act td input{
+				outline: none;
+				border: none;
+				font-size: 20px;
 			}
 		</style>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
@@ -116,13 +134,48 @@
 					Gender:<input type='text' class='field' name='gender' /><br>
 					Height:<input type='text' class='field' name='height' /><br>
 					Weight:<input type='text' class='field' name='weight' /><br>
-					<!-- <button type='submit'>Submit</button> -->
-				</div>
+				</div><br><br>
 				<div class="physical">
-					<table border="1">
-						<th>ACTIVITY</th>						
-					</table>>
-				</div>
+					<table class='phy-act' border="1">
+						<tr>
+							<th>ACTIVITY</th>
+							<th>TYPE/ INTENSITY<br>
+							<span style="font-size: 15px;">(LOW-MODIRATE-HIGH)</span></th>
+							<th>NO OF DAYS PER WEEK</th>	
+							<th>DURATION<br><span style="font-size: 15px;">(MINUTES)</span></th>
+						</tr>
+						<tr>
+							<td>Strength Training</td>
+							<td><input type="text" name="training_type"></td>
+							<td><input type="text" name="training_week"></td>
+							<td><input type="text" name="training_duration"></td>
+						</tr>
+						<tr>
+							<td>Cardio/ Aerobics</td>
+							<td><input type="text" name="cardio_type"></td>
+							<td><input type="text" name="cardio_week"></td>
+							<td><input type="text" name="cardio_duration"></td>
+						</tr>
+						<tr>
+							<td>Stretching/ Yoga</td>
+							<td><input type="text" name="stretching_type"></td>
+							<td><input type="text" name="stretching_week"></td>
+							<td><input type="text" name="stretching_duration"></td>
+						</tr>
+						<tr>
+							<td>Sports/ Leisure</td>
+							<td><input type="text" name="sports_type"></td>
+							<td><input type="text" name="sports_week"></td>
+							<td><input type="text" name="sports_duration"></td>
+						</tr>
+						<tr>
+							<td>Other (specify/describe)</td>
+							<td><input type="text" name="other_type"></td>
+							<td><input type="text" name="other_week"></td>
+							<td><input type="text" name="other_duration"></td>
+						</tr>
+					</table>
+				</div><br><br>
 				<button class='btn btn-info' type='submit'>Submit</button>
 			</div>
 		</form>

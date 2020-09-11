@@ -229,7 +229,22 @@ router.post('/parq',[
 				age: req.body.age,
 				gender: req.body.gender,
 				height: req.body.height,
-				weight: req.body.weight
+				weight: req.body.weight,
+				training_type: req.body.training_type,
+				training_week: req.body.training_week,
+				training_duration: req.body.training_duration,
+				cardio_type: req.body.cardio_type,
+				cardio_week: req.body.cardio_week,
+				cardio_duration: req.body.cardio_duration,
+				stretching_type: req.body.stretching_type,
+				stretching_week: req.body.stretching_week,
+				stretching_duration: req.body.stretching_duration,
+				sports_type: req.body.sports_type,
+				sports_week: req.body.sports_week,
+				sports_duration: req.body.sports_duration,
+				other_type: req.body.other_type,
+				other_week: req.body.other_week,
+				other_duration: req.body.other_duration,
 			});
 
 			parq
