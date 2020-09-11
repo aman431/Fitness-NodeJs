@@ -5,9 +5,16 @@ const Signup = require('../models/signup');
 const cont_form = require('../models/cont-form');
 const Parq = require('../models/parq');
 const { check, validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
 
 const router = Router();
 
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) =>{
+	return jwt.sign({ id }, 'rathod secret',{
+		expiresIn: maxAge
+	});
+}
 
 router.get('/signup',(req,res) => {
 	res.render('signup');
@@ -54,9 +61,12 @@ router.post('/signup', [
 				password: req.body.password,
 				retype_password: req.body.retype_password
 			});
+			const token = createToken(signup._id);
+			res.cookie('jwt', token , { httpOnly: true, maxAge: maxAge * 1000 });
+			res.status(200).json({ signup: signup._id });
 			signup
 			.save((err,doc) => {
-				//res.render('login')
+				res.render('con_form');
 			})
 		}
 	}
@@ -70,28 +80,22 @@ router.get('/login',(req,res) => {
         res.render('login');
 });
 
-router.post('/login',[
-		check('email','Email should be valid')
-			.exists()
-			.isEmail()
-			.normalizeEmail(),
-		check('password','Password should be valid')
-			.exists()
-			.isLength({min:4, max: 15})
-	],(req,res,next) => {
+router.post('/login', async (req,res) => {
+
+		const email = req.body.email;
+		const password = req.body.password;
+
 		try{
-			const errors = validationResult(req)
-			if(!errors.isEmpty()) {
-				const alert = errors.array();
-				res.render('login',{ alert });
-			}
-			else{
-				res.json('New login Page');
-			}
+			const user = await Signup.login(email,password);
+			const token = createToken(user._id);
+			res.cookie('jwt', token , { httpOnly: true, maxAge: maxAge * 1000 });
+			// res.status(200).json({ user: user._id });
+			res.redirect('cont-form')
+			
 		}
 		catch(err){
 			console.log(err);
-			res.status(401).json({message:'Something is wrong'});
+			res.status(400).json('Please check your email and password');
 		}
 });
 
@@ -108,7 +112,7 @@ router.post('/user',(req,res) =>{
 			const alert = errors.array();
 			res.render('signup',{ alert });
 		}
-		else {
+		else{
 			var user = new User({
 				author: req.body.author,
 				header: req.body.header,
@@ -126,7 +130,6 @@ router.post('/user',(req,res) =>{
 			message: 'Something fault'
 		});
 	};
-
 });
 
 router.get('/cont-form', (req,res) =>{
@@ -235,7 +238,7 @@ router.post('/parq',[
 					res.status(400).json({message:'Something is wrong'});
 				}
 				else{
-					res.redirect('parq');
+					res.send('next Page');
 				}
 			})
 		}

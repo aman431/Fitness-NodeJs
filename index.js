@@ -3,6 +3,8 @@ require('./models/db');
 const express = require('express');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const { requireAuth } = require('./middleware/authMiddleware');
 
 const app = express();
 const authControllers = require('./controllers/authRouter');
@@ -16,7 +18,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(urlencodedParser);
 app.use(bodyParser.json());
-
+app.use(cookieParser());
 
 app.use(express.static('public'));
 app.set('view engine','ejs');
@@ -26,6 +28,9 @@ app.set('view engine','ejs');
 app.get('/',(req,res) =>{
 	res.render('home');
 });
+
+app.get('/cont-form', requireAuth , (req,res) => res.render('con_form'));
+app.get('/parq', requireAuth , (req,res) => res.render('parq'));
 
 app.use(authControllers);
 
