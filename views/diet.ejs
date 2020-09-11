@@ -1,3 +1,95 @@
 <!Doctype>
 </html>
+	<head>
+		<title>DFASU</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+		.main{
+			padding: 40px;
+		}
+		.main h1{
+			 text-align: center;
+		}
+		.main .table{
+			font-size: 20px;
+			margin-top: 60px;
+		}
+		.main .table tr td input{
+			border: none;
+			outline: none;
+		}
+		.main .bottom input{
+			border: none;
+			border-bottom: 1px solid black;
+			outline: none;
+		}
+		</style>
+	</head>
+	<body>
+	<div class='main'>
+		<h1>DIET HISTORY, FOOD PREFERENCES  AND SUPPLEMENT USE</h1>
+		<form action="/diet" method="POST" autocomplete="off">
+
+			<table border = 1 class='table'>
+				<tr>
+					<th>THINGS</th>
+					<th>WHAT YOU EAT</th>
+					<th>QUANTITY</th>
+				</tr>
+				<tr>
+					<td>Early Morning</td>
+					<td><input type="text" name="morning_eat" /></td>
+					<td><input type="text" name="morning_quantity" /></td>
+				</tr>
+				<tr>
+					<td>Breakfast</td>
+					<td><input type="text" name="breakfast_eat" /></td>
+					<td><input type="text" name="breakfast_quantity" /></td>
+				</tr>
+				<tr>
+					<td>In Between</td>
+					<td><input type="text" name="Inbetween_eat" /></td>
+					<td><input type="text" name="Inbetween_quantity" /></td>
+				</tr>
+				<tr>
+					<td>Lunch</td>
+					<td><input type="text" name="lunch_eat" /></td>
+					<td><input type="text" name="lunch_quantity" /></td>
+				</tr>
+				<tr>
+					<td>Snacks</td>
+					<td><input type="text" name="snacks_eat" /></td>
+					<td><input type="text" name="snacks_quantity" /></td>
+				</tr>
+				<tr>
+					<td>Dinner</td>
+					<td><input type="text" name="dinner_eat" /></td>
+					<td><input type="text" name="dinner_quantity" /></td>
+				</tr>
+			</table>
+			<div class='bottom'>
+				WATER INTAKE (PER DAY): <input type='text' name='water_intake' /><br><br>
+				COOKING MEDIUM (CHOICE OF DIETARY FAST): <input type='text' name='cooking_medium' /><br><br>
+				<b>FOOD PREFERENCES:</b><br>
+				<ul>
+					<li>DIETARY RESTRICTIONS-</li>
+					<p>HEALTH REASONS: <input type='text' name='health_reason'><br>
+					CULTURAL REASONS: <input type='text' name='cultural_reason'><br>
+					RELIGIOUS REASONS:<input type='text'name='religious_reason'><br>
+					</p><br><br>
+					<li>INTENSE DISLIKE TOWARDS: <input type='text' name='intense_dislike'></li><br>
+					<li>HIGHLY SENSITIVE TO: <input type='text' name='highly_senstitive'></li><br>
+					<li>INTOLERANCE TO: <input type='text' name='intolerance'></li><br>
+					<li>ALLERGIES: <input type='text' name='allergies'></li><br>
+				</ul>
+
+			</div>
+
+			<div class="form-group">
+					<button type="submit" class="btn btn-info"><i class="fa fa-paper-plane" style="padding-right:10px;"></i>Submit</button>
+			</div>
+		</form>
+		</div>
+	</body>
 </html>

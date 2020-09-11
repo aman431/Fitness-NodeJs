@@ -4,6 +4,7 @@ const User = require('../models/user');
 const Signup = require('../models/signup');
 const cont_form = require('../models/cont-form');
 const Parq = require('../models/parq');
+const Diet = require('../models/diet');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 
@@ -268,4 +269,45 @@ router.get('/diet',(req,res) => {
 	res.render('diet');
 });
 
+router.post('/diet',(req,res) => {
+	try{
+	var diet = new Diet({
+		morning_eat: req.body.morning_eat,
+		morning_quantity: req.body.morning_quantity,
+		breakfast_eat: req.body.breakfast_eat,
+		breakfast_quantity: req.body.breakfast_quantity,
+		Inbetween_eat: req.body.Inbetween_eat,
+		Inbetween_quantity: req.body.Inbetween_quantity,
+		lunch_eat: req.body.lunch_eat,
+		lunch_quantity: req.body.lunch_quantity,
+		snacks_eat: req.body.snacks_eat,
+		snacks_quantity: req.body.snacks_quantity,
+		dinner_eat: req.body.dinner_eat,
+		dinner_quantity: req.body.dinner_quantity,
+		water_intake: req.body.water_intake,
+		cooking_medium: req.body.cooking_medium,
+		health_reason: req.body.health_reason,
+		cultural_reason: req.body.cultural_reason,
+		religious_reason: req.body.religious_reason,
+		intense_dislike: req.body.intense_dislike,
+		highly_senstitive: req.body.highly_senstitive,
+		intolerance: req.body.intolerance,
+		allergies: req.body.allergies
+	})
+	 diet
+	 	.save((err,doc) => {
+	 		if(err){
+	 			res.status(400).json('Not Insert')
+	 		}
+	 		else{
+	 			res.status(200).json('It is working');
+	 		}
+	 	})
+
+	 }
+	 catch(err){
+	 	console.log(err);
+	 	res.status(401).json('Something wrong');
+	 } 
+});
 module.exports = router;
