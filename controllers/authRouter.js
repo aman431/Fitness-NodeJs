@@ -66,7 +66,7 @@ router.post('/signup', [
 			});
 			const token = createToken(signup._id);
 			res.cookie('jwt', token , { httpOnly: true, maxAge: maxAge * 1000 });
-			res.status(200).json({ signup: signup._id });
+			//res.status(200).json({ signup: signup._id });
 			signup
 			.save((err,doc) => {
 				res.render('con_form');
