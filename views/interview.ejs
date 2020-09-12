@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Client Interview</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<style>
+			.main{
+				padding: 40px;
+			}
+			.main h1{
+				text-align: center;
+			}
+			.client_details{
+				width: 100%;
+				margin-top: 60px;
+			}
+			.client_details tr td input{
+				border: none;
+				outline: none;
+				width: 100%;
+			}
+			.health_risk{
+				width: 100%;
+				margin-top: 60px;
+			}
+			.health_risk tr td input{
+				border: none;
+				outline: none;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<h1>Client Interview, client profile and health screening questionaries </h1>
+			<table border = 1 class='client_details'>
+				<tr>
+					<th>Client details</th>
+					<th style="border-left: 1px solid white;"></th>
+					<th style="border-left: 1px solid white;"></th>
+					<th style="border-left: 1px solid white;"></th>
+					<th style="border-left: 1px solid white;"></th>
+				</tr>
+				<tr>
+					<td>Client's Name</td>
+					<td>Gender</td>
+					<td>Height</td>
+					<td>Weight</td>
+					<td>Age</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="name"></td>
+					<td><input type="text" name="gender"></td>
+					<td><input type="text" name="height"></td>
+					<td><input type="text" name="weight"></td>
+					<td><input type="text" name="age"></td>
+				</tr>
+			</table>
+			<table border = 1 class='health_risk'>
+				<tr>
+					<th>Any health risk factor? Ensure the client also completes th PARQ</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="health_risk"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

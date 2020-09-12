@@ -10,35 +10,31 @@
 			.main{
 				padding-left:40px;
 			}
-			.main p{
-				font-size: 30px;
-			}
 			table{
 				 border-collapse: collapse;
-				 font-size: 30px;
-				 width: 850px;
+				 font-size: 20px;
 			}
 			table tr td{
 				padding: 20px;
-				font-size: 30px;
+				font-size: 20px;
 			}
 			.field{
 				border:none;
 				outline: none;
 				margin-left: 40px;
-				font-size: 30px;
+				font-size: 20px;
 				margin-bottom: 50px;
 				border-bottom: 1px solid black;
 				margin-right: 10px;
 			}
-			button{
+			/*button{
 				margin-top: 15px;
 				padding: 10px;
-				font-size: 40px;
-			}
+				font-size: 20px;
+			}*/
 			.information{
 				padding: 5px;
-				font-size: 30px;
+				font-size: 20px;
 			}
 			.phy-act{
 				position: relative;
@@ -81,42 +77,42 @@
 				<table border = 1px>
 					<tr>
 						<td style="width:700px;">1. Has your doctor ever said that you have a heart condition and that you should only perform physical activity recommended by a doctor? </td>
-						<td style='width:200px'>Yes<input type='radio' name='question1' value='yes'>
+						<td style='width:200px'>Yes<input style='margin-right: 10px;'type='radio' name='question1' value='yes'>
 						No<input type='radio'name='question1' value='no'></td>
 					</tr>
 					<tr>
 						<td style="width:600px;">2. Do you feel pain in your chest when you perform physical activity?</td>
-						<td>Yes<input type='radio'name='question2' value='yes' >
+						<td>Yes<input style='margin-right: 10px;'type='radio'name='question2' value='yes' >
 							No<input type='radio'name='question2' value='no'>
 						</td>
 					</tr>
 					<tr>
 						<td style="width:600px;">3. Do you lose your balance because of dizziness or do you ever lose consciousness?</td>
-						<td>Yes<input type='radio'name='question3' value='yes' >
+						<td>Yes<input style='margin-right: 10px;' type='radio'name='question3' value='yes' >
 							No<input type='radio'name='question3' value='no'>
 						</td>
 					</tr>
 					<tr>
 						<td style="width:600px;">4. Do you have a bone or joint problem that could be made worse by a change in your physical activity?</td>
-						<td>Yes<input type='radio'name='question4' value='yes' >
+						<td>Yes<input style='margin-right: 10px;' type='radio'name='question4' value='yes' >
 							No<input type='radio'name='question4' value='no'>
 						</td>
 					</tr>
 					<tr>
 						<td style=' width: 600px;'>5. Do you have a bone or joint problem that could be made worse by a change in your physical activity?  </td>
-						<td>Yes<input type='radio'name='question5' value='yes' >
+						<td>Yes<input style='margin-right: 10px;' type='radio'name='question5' value='yes' >
 							No<input type='radio'name='question5' value='no'>
 						</td>
 					</tr>
 					<tr>
 						<td style=' width: 600px;'>6. Is your doctor currently prescribing any medication for your blood pressure or for a heart condition? </td>
-						<td>Yes<input type='radio'name='question6' value='yes' >
+						<td>Yes<input style='margin-right: 10px;' type='radio'name='question6' value='yes' >
 							No<input type='radio'name='question6' value='no'>
 						</td>
 					</tr>
 					<tr>
 						<td style=' width: 600px;'>7. Is your doctor currently prescribing any medication for your blood pressure or for a heart condition? </td>
-						<td>Yes<input type='radio'name='question7' value='yes' >
+						<td>Yes<input style='margin-right: 10px;'type='radio'name='question7' value='yes' >
 							No<input type='radio'name='question7' value='no'>
 						</td>
 					</tr>
@@ -173,7 +169,10 @@
 						</tr>
 					</table>
 				</div><br><br>
-				<button class='btn btn-info' type='submit'>Submit</button>
+				<div class="form-group">
+					<button type="submit" class="btn btn-info"><i class="fa fa-paper-plane" style="padding-right:10px;"></i>Submit</button>
+				</div>
+				<!-- <button class='btn btn-info' type='submit'>Submit</button> -->
 			</div>
 		</form>
 	</body>

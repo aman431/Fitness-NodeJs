@@ -254,7 +254,7 @@ router.post('/parq',[
 					res.status(400).json({message:'Something is wrong'});
 				}
 				else{
-					res.send('next Page');
+					res.redirect(diet);
 				}
 			})
 		}
@@ -300,7 +300,8 @@ router.post('/diet',(req,res) => {
 	 			res.status(400).json('Not Insert')
 	 		}
 	 		else{
-	 			res.status(200).json('It is working');
+	 			// res.redirect('diet');
+	 			res.send('it is working');
 	 		}
 	 	})
 
@@ -310,4 +311,9 @@ router.post('/diet',(req,res) => {
 	 	res.status(401).json('Something wrong');
 	 } 
 });
+
+router.get('/interview', (req,res) => {
+	 	res.render('interview');
+	 })
+
 module.exports = router;

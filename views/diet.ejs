@@ -1,5 +1,5 @@
-<!Doctype>
-</html>
+<!Doctype html>
+<html>
 	<head>
 		<title>DFASU</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
@@ -24,6 +24,21 @@
 			border-bottom: 1px solid black;
 			outline: none;
 		}
+		.main .supplement{
+			font-size: 20px;
+		}
+		.main .supplement .supplement_table{
+			width: 750px;
+			font-size: 20px;
+			margin-top: 40px;
+		}
+		.supplement_table tr th{
+			text-align: center;
+		}
+		.main .supplement .supplement_table tr td input{
+			border: none;
+			outline: none;
+		}
 		</style>
 	</head>
 	<body>
@@ -31,7 +46,7 @@
 		<h1>DIET HISTORY, FOOD PREFERENCES  AND SUPPLEMENT USE</h1>
 		<form action="/diet" method="POST" autocomplete="off">
 
-			<table border = 1 class='table'>
+			<table border = 1 class="table">
 				<tr>
 					<th>THINGS</th>
 					<th>WHAT YOU EAT</th>
@@ -83,9 +98,41 @@
 					<li>INTOLERANCE TO: <input type='text' name='intolerance'></li><br>
 					<li>ALLERGIES: <input type='text' name='allergies'></li><br>
 				</ul>
-
 			</div>
-
+			<div class='supplement'>
+				<p><b>Supplement Usages:</b><br>
+				<span style='font-size:17px;'>Do you take any nutritional supplements or vitamins/minerals? if yes, please list:</span></p>
+				<table border = 1 class='supplement_table'>
+					<tr>
+						<th>SUPPLEMENT TYPE</th>
+						<th>DOSAGE</th>
+					</tr>
+					<tr>
+						<td><input type='text' name='box11'></td>
+						<td><input type='text' name='box12'></td>
+					</tr>
+					<tr>
+						<td><input type='text' name='box12'></td>
+						<td><input type='text' name='box12'></td>
+					</tr>
+					<tr>
+						<td><input type='text' name='box12'></td>
+						<td><input type='text' name='box12'></td>
+					</tr>
+					<tr>
+						<td><input type='text' name='box12'></td>
+						<td><input type='text' name='box12'></td>
+					</tr>
+					<tr>
+						<td><input type='text' name='box12'></td>
+						<td><input type='text' name='box12'></td>
+					</tr>
+					<tr>
+						<td><input type='text' name='box12'></td>
+						<td><input type='text' name='box12'></td>
+					</tr>
+				</table>
+			</div><br><br>
 			<div class="form-group">
 					<button type="submit" class="btn btn-info"><i class="fa fa-paper-plane" style="padding-right:10px;"></i>Submit</button>
 			</div>
