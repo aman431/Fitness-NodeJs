@@ -31,11 +31,88 @@
 				outline: none;
 				width: 100%;
 			}
+			.medical_history{
+				margin-top: 40px;
+				width: 100%;
+			}
+			.medical_history tr td textarea{
+				border: none;
+				outline: none;
+				width: 100%;
+			}
+			.medical_history tr td input{
+				border: none;
+				outline: none;
+				width: 100%;
+			}
+			.lifestyle{
+				margin-top: 40px;
+				width: 100%;
+			}
+			.lifestyle tr td{
+				text-align: center;
+				padding: 10px;
+			}
+			.lifestyle tr td input{
+				width: 100%;
+				border:none;
+				outline: none;
+			}
+			.fitness_profile{
+				margin-top: 40px;
+				width: 100%;
+			}
+			.fitness_profile tr td input{
+				width: 100%;
+				border:none;
+				outline: none;
+			}
+			.lifestyle tr td{
+				text-align: center;
+				padding: 10px;
+			}
+			.exe_preferrence{
+				margin-top: 40px;
+				width: 100%;
+			}
+			.exe_preferrence tr td input
+			{
+				width: 100%;
+				border: none;
+				outline: none;
+			}
+			.barrier_to_exer{
+				margin-top: 40px;
+				width: 100%;
+			}
+			.barrier_to_exer tr td input{
+				width: 100%;
+				border: none;
+				outline: none;
+			}
+			.client_attitude{
+				width: 100%;
+				margin-top: 40px;
+			}
+			.client_attitude tr td textarea{
+				width: 100%;
+				border: none;
+				outline: none;
+			}
+			.Other{
+				width: 100%;
+				margin-top: 40px;
+			}
+			.Other tr td input{
+				text-align: center;
+				/*padding-left: 10px;*/
+			}
 		</style>
 	</head>
 	<body>
 		<div class='main'>
 			<h1>Client Interview, client profile and health screening questionaries </h1>
+			<form action="/interview" method="POST" autocomplete="off">
 			<table border = 1 class='client_details'>
 				<tr>
 					<th>Client details</th>
@@ -67,6 +144,137 @@
 					<td><input type="text" name="health_risk"></td>
 				</tr>
 			</table>
+			<table border="1" class="medical_history">
+				<tr>
+					<th colspan="2">Client Medical history</th>
+				</tr>
+				<tr>
+					<td colspan="2"><textarea rows="3" cols="40" name='medical_history'></textarea></td>
+				</tr>
+				<tr>
+					<td width="200px;" style="text-align: center;">Client's Medications</td>
+					<td><textarea cols="20" name="medications"></textarea></td>
+				</tr>
+			</table>
+			<table border=1 class="lifestyle">
+				<tr>
+					<th colspan="2">Lifestyle Evaluation</th>
+				</tr>
+				<tr>
+					<td style="width: 200px;">Occupation</td>
+					<td><input type="text" name="occupation"></td>
+				</tr>
+				<tr>
+					<td>Time availability</td>
+					<td><input type="text" name="time_availability"></td>
+				</tr>
+				<tr>
+					<td>Lifestyle<br>
+					(smoke, drink, sleep)</td>
+					<td><input type="text" name="lifestyle"></td>
+				</tr>
+			</table>
+			<table border=1 class="fitness_profile">
+				<tr>
+					<th colspan="2">Current Fitness Profile</th>
+				</tr>
+				<tr>
+					<td style="width: 250px;">Physical activity levels:<br>LOW/MEDIUM/HIGH</td>
+					<td><input type="text" name="phy_activity"></td>
+				</tr>
+				<tr>
+					<td>Exercise and training history</td>
+					<td><input type="text" name="exercise_training"></td>
+				</tr>
+				<tr>
+					<td>Exercise contradicitions</td>
+					<td><input type="text" name="exercise_contradicition"></td>
+				</tr>
+			</table>
+			<table border="1" class="exe_preferrence">
+				<tr>
+					<th colspan="2">Client's Exercise Profile</th>
+				</tr>
+				<tr>
+					<td>Likes</td>
+					<td>Dislikes</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="likes"></td>
+					<td><input type="text" name="dislikes"></td>
+				</tr>
+			</table>
+			<table border="1" class="barrier_to_exer">
+				<tr>
+					<th colspan="2">Client's barriers to exercise<br>
+					Establish the physical, psychological and social reasons for clients participation in an exercise program, help clients to identify barriers to adherence and how to overcome them.</th>
+				</tr>
+				<tr>
+					<td>Barrier to exercising and achieving goals</td>
+					<td>Strategies to overcome them</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="barr_to_exer"></td>
+					<td><input type="text" name="soln_to_over"></td>
+				</tr>
+			</table>
+			<table border="1" class="client_attitude">
+				<tr>
+					<th>Summary of the client's attitude and motivation to exercise </th>
+				</tr>
+				<tr>
+					<td><textarea cols="40" name="motivation"></textarea></td>
+				</tr>
+			</table>
+			<table border="1" class="barrier_to_exer">
+				<tr>
+					<th colspan="2">Motivational strategies<br>
+					Help clients to develop and create their own motivational strategies to help them to adhere to an exercise programme, You will need to consider Personal, environmental and cognitive factors and their potential effect on exercise adherence.</th>
+				</tr>
+				<tr>
+					<td>Motivational strategies</td>
+					<td>How can you use them to adhere to an exercise programme</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="motivation_strategies"></td>
+					<td><input type="text" name="exercise_programm"></td>
+				</tr>
+			</table>
+			<table border="1" class="barrier_to_exer">
+				<tr>
+					<th colspan="3">Specific fitness goals<br>
+					Create a short, medium and long term SMART goal that could be applied to a client in a fitness setting.</th>
+				</tr>
+				<tr>
+					<td>Short Term(4 weeks)</td>
+					<td>Medium Term (8-12 weeks)</td>
+					<td>Long term (6 months plus)</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="short_term"></td>
+					<td><input type="text" name="medium_term"></td>
+					<td><input type="text" name="long_term"></td>
+				</tr>
+			</table>
+			<table border="1" class="Other">
+				<tr>
+					<th colspan="3">Other Information</th>
+				</tr>
+				<tr>
+					<td>Informed consent completed</td>
+					<td style="text-align: center;">Yes<input type="radio" name="consent_complete" value="Yes"></td>
+					<td style="text-align: center;">NO<input type="radio" name="consent_complete" value="No"></td>
+				</tr>
+				<tr>
+					<td>Clearance letter from a health professional or physican if needed</td>
+					<td style="text-align: center;">Yes<input type="radio" name="clearance_letter" value="Yes"></td>
+					<td style="text-align: center;">NO<input type="radio" name="clearance_letter" value="No"></td>
+				</tr>
+			</table>
+			<div class="form-group" style="margin-top: 40px;">
+					<button type="submit" class="btn btn-info"><i class="fa fa-paper-plane" style="padding-right:10px;"></i>Submit</button>
+			</div>
+		</form>
 		</div>
 	</body>
 </html>

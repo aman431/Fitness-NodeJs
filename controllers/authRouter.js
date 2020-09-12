@@ -5,6 +5,8 @@ const Signup = require('../models/signup');
 const cont_form = require('../models/cont-form');
 const Parq = require('../models/parq');
 const Diet = require('../models/diet');
+const Interview = require('../models/interview');
+
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 
@@ -251,10 +253,11 @@ router.post('/parq',[
 			parq
 			.save((err,doc) => {
 				if(err){
+					console.log(err);
 					res.status(400).json({message:'Something is wrong'});
 				}
 				else{
-					res.redirect(diet);
+					res.redirect('diet');
 				}
 			})
 		}
@@ -292,19 +295,31 @@ router.post('/diet',(req,res) => {
 		intense_dislike: req.body.intense_dislike,
 		highly_senstitive: req.body.highly_senstitive,
 		intolerance: req.body.intolerance,
-		allergies: req.body.allergies
+		allergies: req.body.allergies,
+		box11: req.body.box11,
+		box12: req.body.box12,
+		box21: req.body.box21,
+		box22: req.body.box22,
+		box31: req.body.box31,
+		box32: req.body.box32,
+		box41: req.body.box41,
+		box42: req.body.box42,
+		box51: req.body.box51,
+		box52: req.body.box52,
+		box61: req.body.box61,
+		box62: req.body.box62,
 	})
 	 diet
 	 	.save((err,doc) => {
 	 		if(err){
+	 			console.log(err);
 	 			res.status(400).json('Not Insert')
 	 		}
 	 		else{
-	 			// res.redirect('diet');
-	 			res.send('it is working');
+	 			res.redirect('interview');
+	 			// res.send('it is working');
 	 		}
 	 	})
-
 	 }
 	 catch(err){
 	 	console.log(err);
@@ -314,6 +329,59 @@ router.post('/diet',(req,res) => {
 
 router.get('/interview', (req,res) => {
 	 	res.render('interview');
-	 })
+	 });
+
+
+router.post('/interview', (req,res) => {
+	try{
+	var interview = new Interview({
+		name: req.body.name,
+		gender: req.body.gender,
+		height: req.body.height,
+		weight: req.body.weight,
+		age: req.body.age,
+		health_risk: req.body.health_risk,
+		medical_history: req.body.medical_history,
+		medications: req.body.medications,
+		occupation: req.body.occupation,
+		time_availability: req.body.time_availability,
+		lifestyle: req.body.lifestyle,
+		phy_activity: req.body.phy_activity,
+		exercise_training: req.body.exercise_training,
+		exercise_contradicition: req.body.exercise_contradicition,
+		likes: req.body.likes,
+		dislikes: req.body.dislikes,
+		barr_to_exer: req.body.barr_to_exer,
+		soln_to_over: req.body.soln_to_over,
+		motivation_strategies: req.body.motivation_strategies,
+		exercise_programm: req.body.exercise_programm,
+		short_term: req.body.short_term,
+		medium_term: req.body.medium_term,
+		long_term: req.body.long_term,
+		consent_complete: req.body.consent_complete,
+		clearance_letter: req.body.clearance_letter
+ 	});
+
+	interview
+		.save((err, doc) => {
+			if (err) {
+				console.log(err);
+				res.status(400).json('Something went wrong');
+			}
+			else{
+				res.redirect('submit');
+				// res.status(200).json('successfully');
+			}
+		});
+	}
+	catch(err){
+		console.log(err);
+		res.status(401).json('Something wrong');
+	}
+});
+
+router.get('/submit',(req,res) => {
+	res.render('submit');
+})
 
 module.exports = router;

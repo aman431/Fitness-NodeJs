@@ -31,7 +31,9 @@ app.get('/',(req,res) =>{
 
 app.get('/cont-form', requireAuth , (req,res) => res.render('con_form'));
 app.get('/parq', requireAuth , (req,res) => res.render('parq'));
-
+app.get('/diet', requireAuth , (req,res) => res.render('diet'));
+app.get('/interview', requireAuth , (req,res) => res.render('interview'));
+app.get('/submit', requireAuth , (req,res) => res.render('submit'));
 app.use(authControllers);
 
 const port = process.env.PORT || 3000;

@@ -70,21 +70,70 @@ const dietSchema = new mongoose.Schema({
 	},
 	intense_dislike:{
 		type: String,
-		required: [true, 'This field is required']
+		// required: [true, 'This field is required']
 	},
 	highly_senstitive:{
 		type: String,
-		required: [true, 'This field is required']
+		// required: [true, 'This field is required']
 	},
 	intolerance:{
 		type: String,
-		required: [true, 'This field is required']
+		// required: [true, 'This field is required']
 	},
 	allergies:{
 		type: String,
-		required: [true, 'This field is required']
+		// required: [true, 'This field is required']
+	},
+	box11:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box12:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box21:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box22:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box31:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box32:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box41:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box42:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box51:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box52:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box61:{
+		type: String,
+		// required: [true, 'This field is required']
+	},
+	box62:{
+		type: String,
+		// required: [true, 'This field is required']
 	}
 });
+
 
 const Diet = mongoose.model('diet', dietSchema);
 module.exports = Diet
