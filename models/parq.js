@@ -38,63 +38,63 @@ const parqSchema = new mongoose.Schema({
 	},
 	training_type:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	training_week:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	training_duration:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	cardio_type:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	cardio_week:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	cardio_duration:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	stretching_type:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	stretching_week:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	stretching_duration:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	sports_type:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	sports_week:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	sports_duration:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	other_type:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	other_week:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	},
 	other_duration:{
 		type:String,
-		required: [true,'This Field is required']
+		// required: [true,'This Field is required']
 	}
 });
 
