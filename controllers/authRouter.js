@@ -169,7 +169,11 @@ router.post('/cont-form',[
 					res.status(400).json({message:'Something is Wrong'})
 				}
 				else{
-					res.redirect('parq');
+
+					res.redirect('parq', {
+						viewTitle: 'Insert data',
+						con_form: req.body
+					});
 				}
 			})
 		}
