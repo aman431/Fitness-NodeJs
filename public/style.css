@@ -42,13 +42,12 @@
 }
 .login a{
     list-style: none;
-    padding: 5px 5px;
+    padding: 10px 15px;
     text-decoration: none;
     color: white;
 }
 .login a span{
     padding: 10px;
-    border: 1px solid white;
 }
 .Introduction{
 	display: flex;

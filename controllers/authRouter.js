@@ -382,6 +382,11 @@ router.post('/interview', (req,res) => {
 
 router.get('/submit',(req,res) => {
 	res.render('submit');
+});
+
+router.get('/logout',(req,res) => {
+	res.cookie('jwt','',{maxAge: 1});
+	res.redirect('/');
 })
 
 module.exports = router;
