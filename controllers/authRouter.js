@@ -170,10 +170,7 @@ router.post('/cont-form',[
 				}
 				else{
 
-					res.redirect('parq', {
-						viewTitle: 'Insert data',
-						con_form: req.body
-					});
+					res.redirect('parq');
 				}
 			})
 		}
