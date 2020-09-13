@@ -390,4 +390,15 @@ router.get('/logout',(req,res) => {
 	res.redirect('/');
 })
 
+// router.get('update/:id',(req,res) => {
+// 	cont_form.findById(req.params.id, (err,doc) => {
+// 		if(!err){
+// 			console.log(doc);
+// 			// res.render('con_form',{
+// 			// 	client: doc
+// 			// });
+// 		}
+// 	});
+// });
+
 module.exports = router;
