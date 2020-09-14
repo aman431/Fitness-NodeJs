@@ -61,7 +61,16 @@
 			Client's Name: <input type='text' class='field' name='client_Name' required><br>
 			Contact Number: <input type='text' class='field' name='client_Number' required><br>
 			<div class="form-group">                                      	
-				<button type="submit" class="btn btn-info"><i class="fa fa-arrow-circle-right fa-lg" style="padding-right:10px;"></i>Submit</button>
+				<button type="Submit" class="btn btn-info" onclick="return myfunction()"><i class="fa fa-arrow-circle-right fa-lg" style="padding-right:10px;"></i>Submit</button>
+
+				<script type="text/javascript">
+					function myfunction(){
+						const ans = confirm("Before Submitting !!\nPlease go through a form again.");
+						if(!ans){
+							return false;
+						}
+					}
+				</script>
 			</div>
 			</p>
 		</div>
