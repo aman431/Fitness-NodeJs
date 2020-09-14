@@ -17,7 +17,15 @@
 			<h1>Your Response is successfully Submitted</h1>
 			<h3>Please Contact to your Traniner for further Process</h3>
 			<h2><i class="fa fa-check" style="padding-right:10px; color: #fff"></i>Thank You</h2>
-			<a class="btn btn-warning" href="/logout" style='font-size: 30px'><i class="fa fa-sign-out" style="padding-right:10px;"></i>Logout</a>
+			<a class="btn btn-warning" href="/logout" onclick=" return myfunction()"  style='font-size: 30px'><i class="fa fa-sign-out" style="padding-right:10px;"></i>Logout</a>
+			<script type="text/javascript">
+				function myfunction(){
+					const ans = confirm("Please confirm !!\nYou want to Logout.");
+					if(!ans){
+						return false;
+					}
+				}
+			</script>
 		</div>
 	</div>
 </body>

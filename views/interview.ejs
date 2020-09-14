@@ -272,7 +272,17 @@
 				</tr>
 			</table>
 			<div class="form-group" style="margin-top: 40px;">
-					<button type="submit" class="btn btn-info"><i class="fa fa-arrow-circle-right fa-lg" style="padding-right:10px;"></i>Submit</button>
+					<button type="submit" class="btn btn-info" onclick="return myfunction()"><i class="fa fa-arrow-circle-right fa-lg" style="padding-right:10px;"></i>Submit</button>
+
+
+					<script type="text/javascript">
+						function myfunction(){
+							const ans = confirm("Before Submitting !!\nPlease go through a form again.");
+							if(!ans){
+								return false;
+							}
+						}
+					</script>
 			</div>
 		</form>
 		</div>

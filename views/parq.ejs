@@ -170,9 +170,17 @@
 					</table>
 				</div><br><br>
 				<div class="form-group">
-					<button type="submit" class="btn btn-info"><i class="fa fa-arrow-circle-right fa-lg" style="padding-right:10px;"></i>Submit</button>
+					<button type="submit" class="btn btn-info" onclick=" return myfunction()"><i class="fa fa-arrow-circle-right fa-lg" style="padding-right:10px;"></i>Submit</button>
+
+					<script type="text/javascript">
+						function myfunction(){
+							const ans = confirm("Before Submitting !!\nPlease go through a form again.");
+							if(!ans){
+								return false;
+							}
+						}
+					</script>
 				</div>
-				<!-- <button class='btn btn-info' type='submit'>Submit</button> -->
 			</div>
 		</form>
 	</body>
